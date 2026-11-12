@@ -11,6 +11,13 @@ I build reliable data pipelines and turn raw data into insights businesses can a
 
 ### 🚀 Featured Engineering Projects
 
+#### 📦 Olist E-Commerce Analytics Engineering Pipeline: AWS S3 → Snowflake → dbt → Power BI
+*End-to-end ELT pipeline with least-privilege governance, tested dimensional models and executive BI*
+- **Architecture:** Raw Olist CSV files land in Amazon S3, ingest into Snowflake's `RAW` schema via a read-only storage integration and external stage, transform through `STAGING` views and a dimensional `MARTS` star schema in dbt Core, and feed a two-page Power BI report.
+- **Stack:** AWS S3, Snowflake, dbt Core, Power BI, SQL, GitHub
+- **Highlights:** Processed ~1.4M rows across 9 relational tables using path-scoped IAM roles and key-pair authentication. Built automated dbt data quality tests and surfaced 13.49M net revenue across 98K orders, late delivery trends (6.77%), and delivery impact on customer review scores (4.09 avg) across *Sales Overview* and *Delivery & Satisfaction* dashboards.
+- 🔗 Repo: https://github.com
+
 #### 💳 Finance Fraud & Loans: Lakeflow Declarative Pipeline
 *Medallion pipeline with data quality quarantine and fraud risk scoring*
 - **Architecture:** Auto Loader ingests 11 CSV files into Bronze streaming tables, cleaned in Silver, modelled as a star schema in Gold, then surfaced in an AI/BI dashboard. Records that fail hard data quality rules are routed to a Quarantine table with failure reasons.
