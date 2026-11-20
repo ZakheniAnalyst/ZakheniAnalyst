@@ -18,6 +18,15 @@ I build reliable data pipelines and turn raw data into insights businesses can a
 - **Highlights:** Processed ~1.4M rows across 9 relational tables using path-scoped IAM roles and key-pair authentication. Built automated dbt data quality tests and surfaced 13.49M net revenue across 98K orders, late delivery trends (6.77%), and delivery impact on customer review scores (4.09 avg) across *Sales Overview* and *Delivery & Satisfaction* dashboards.
 - 🔗 Repo: https://github.com/ZakheniAnalyst/olist-s3-snowflake-dbt
 
+#### 🛍️ E-Commerce API ELT Pipeline: DummyJSON → AWS S3 → Snowflake → dbt → Tableau
+
+*End-to-end API-driven ELT pipeline with automated orchestration and interactive BI reporting*
+
+- **Architecture:** Python ingests paginated product, user and cart data from the DummyJSON REST API and lands raw JSON in Amazon S3. Snowflake loads the data into a `RAW` schema using a secure storage integration, while dbt transforms nested JSON into staging views and analytical marts. Tableau Public visualizes the resulting data.
+- **Stack:** Python, REST API, AWS S3, AWS IAM, Snowflake, dbt (dbt-snowflake), SQL, GitHub Actions, Tableau Public
+- **Highlights:** Implemented key-pair authentication, least-privilege IAM access, idempotent data loading and automated GitHub Actions orchestration. Built flattened staging models and dimensional marts, including `fct_cart_items` (788 rows) and `dim_users` (208 rows). The Tableau dashboard covers revenue, product performance, customer demographics and geographic trends.
+- 🔗 Repo: [dummyjson-data-pipeline](https://github.com/ZakheniAnalyst/dummyjson-data-pipeline)
+
 #### 💳 Finance Fraud & Loans: Lakeflow Declarative Pipeline
 *Medallion pipeline with data quality quarantine and fraud risk scoring*
 - **Architecture:** Auto Loader ingests 11 CSV files into Bronze streaming tables, cleaned in Silver, modelled as a star schema in Gold, then surfaced in an AI/BI dashboard. Records that fail hard data quality rules are routed to a Quarantine table with failure reasons.
